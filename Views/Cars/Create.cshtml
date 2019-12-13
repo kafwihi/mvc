@@ -1,0 +1,32 @@
+@model mvc.Models.Cars
+@{
+  ViewBag.Title = "New car";
+}
+<h2>@ViewData["Title"]</h2>
+<form asp-controller="Cars" asp-action="Create" method="post"
+  class="form-horizontal" role="form">
+  <div class="form-horizontal">
+     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+      <label asp-for="CarBrand" class="col-md-2 control-label"></label>
+      <div class="col-md-10">
+        <input asp-for="CarBrand" class="form-control" />
+        <span asp-validation-for="CarBrand" class="text-danger"></span>
+      </div>
+      <label asp-for="CarModel" class="col-md-2 control-label"></label>
+      <div class="col-md-10">
+        <input asp-for="CarModel" class="form-control" />
+        <span asp-validation-for="CarModel" class="text-danger"></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Create" class="btn btn-default" />
+      </div>
+    </div>
+  </div>
+</form>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

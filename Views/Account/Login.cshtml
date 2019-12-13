@@ -1,0 +1,16 @@
+@model mvc.Models.LoginViewModel
+@{
+    ViewData["Title"]= "Login";
+}
+
+<form asp-controller="Account" asp-action="Login" method="post">
+    <div>
+        Username : <input type="text" asp-for="Username"/>
+    </div>
+     <div>
+        Password : <input type="password" asp-for="Password"/>
+    </div>
+     <div>
+         <input type="submit" value="Login"/>
+    </div>
+</form>
